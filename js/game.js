@@ -72,7 +72,7 @@ function loadNextQuestion() {
 
   document.getElementById('question-sub-category').textContent = problem.sub_category;
   document.getElementById('status-text').textContent = '読み上げ中…';
-  document.getElementById('question-text').textContent = problem.question;
+  document.getElementById('question-text').textContent = '';
 
   speakText(problem.questionForSpeech, function() {
     AppState.isSpeaking = false;
@@ -156,6 +156,7 @@ function handleAnswerSubmit(inputStr) {
   }
 
   document.getElementById('score-display').textContent = AppState.score + ' / ' + AppState.total;
+  document.getElementById('question-text').textContent = problem.question;
 }
 
 /* ===== 履歴追加 ===== */
